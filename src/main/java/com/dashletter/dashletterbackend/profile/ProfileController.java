@@ -22,13 +22,13 @@ public class ProfileController {
     @RequestMapping("/profile/{username}")
     public Optional<Profile> getProfile(@PathVariable String username){
         return profileServices.getProfile(username);
-
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/profile")
     public void addProfile(@RequestBody Profile profile){
         profileServices.addTopic(profile);
     }
+
     @RequestMapping(method = RequestMethod.PUT, value = "/profile/{username}")
     public void updateProfile(@RequestBody Profile profile, @PathVariable String username){
         profileServices.updateProfile(profile,username);
