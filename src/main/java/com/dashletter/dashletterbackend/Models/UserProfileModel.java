@@ -1,12 +1,11 @@
-package com.dashletter.dashletterbackend.Entities;
+package com.dashletter.dashletterbackend.Models;
 
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.util.List;
 
 @Entity
-public class UserProfile {
+public class UserProfileModel {
 
     @Id
     String username;
@@ -17,10 +16,10 @@ public class UserProfile {
     String email;
     String phno;
 
-    public UserProfile() {
+    public UserProfileModel() {
     }
 
-    public UserProfile(String username, String name, String gender, String dob, String pass, String email, String phno) {
+    public UserProfileModel(String username, String name, String gender, String dob, String pass, String email, String phno) {
         this.username = username;
         this.name = name;
         this.gender = gender;
