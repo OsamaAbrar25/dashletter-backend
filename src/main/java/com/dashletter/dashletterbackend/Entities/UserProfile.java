@@ -1,4 +1,4 @@
-package com.dashletter.dashletterbackend.profile;
+package com.dashletter.dashletterbackend.Entities;
 
 
 import javax.persistence.Entity;
@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import java.util.List;
 
 @Entity
-public class Profile {
+public class UserProfile {
 
     @Id
     String username;
@@ -17,10 +17,10 @@ public class Profile {
     String email;
     String phno;
 
-    public Profile() {
+    public UserProfile() {
     }
 
-    public Profile(String username, String name, String gender, String dob, String pass, String email, String phno) {
+    public UserProfile(String username, String name, String gender, String dob, String pass, String email, String phno) {
         this.username = username;
         this.name = name;
         this.gender = gender;
