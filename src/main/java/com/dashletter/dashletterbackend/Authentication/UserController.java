@@ -16,10 +16,10 @@ public class UserController {
     private ApplicationUserRepository applicationUserRepository;
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
-    public UserController(ApplicationUserRepository applicationUserRepository, BCryptPasswordEncoder bCryptPasswordEncoder) {
+    /*public UserController(ApplicationUserRepository applicationUserRepository, BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.applicationUserRepository = applicationUserRepository;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
-    }
+    }*/
 
     @PostMapping("/sign-up")
     public void signUp(@RequestBody UserProfileModel user) {
