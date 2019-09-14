@@ -1,32 +1,19 @@
-package com.dashletter.dashletterbackend.Models;
+package com.dashletter.dashletterbackend.Authentication;
 
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
-public class UserProfileModel {
+public class ApplicationUser {
 
     @Id
-    String username;
-    String name;
-    String gender;
-    String dob;
-    String pass;
-    String email;
-    String phno;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column(unique = true)
+    private String username;
+    private String password;
 
-    public UserProfileModel() {
-    }
-
-    public UserProfileModel(String username, String name, String gender, String dob, String pass, String email, String phno) {
-        this.username = username;
-        this.name = name;
-        this.gender = gender;
-        this.dob = dob;
-        this.pass = pass;
-        this.email = email;
-        this.phno = phno;
+    public long getId() {
+        return id;
     }
 
     public String getUsername() {
@@ -37,51 +24,11 @@ public class UserProfileModel {
         this.username = username;
     }
 
-    public String getName() {
-        return name;
+    public String getPassword() {
+        return password;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getDob() {
-        return dob;
-    }
-
-    public void setDob(String dob) {
-        this.dob = dob;
-    }
-
-    public String getPass() {
-        return pass;
-    }
-
-    public void setPass(String pass) {
-        this.pass = pass;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPhno() {
-        return phno;
-    }
-
-    public void setPhno(String phno) {
-        this.phno = phno;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
