@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class UserProfileModel {
+public class UserProfileModel121 {
 
     @Id
     String username;
@@ -16,10 +16,10 @@ public class UserProfileModel {
     String email;
     String phno;
 
-    public UserProfileModel() {
+    public UserProfileModel121() {
     }
 
-    public UserProfileModel(String username, String name, String gender, String dob, String pass, String email, String phno) {
+    public UserProfileModel121(String username, String name, String gender, String dob, String pass, String email, String phno) {
         this.username = username;
         this.name = name;
         this.gender = gender;

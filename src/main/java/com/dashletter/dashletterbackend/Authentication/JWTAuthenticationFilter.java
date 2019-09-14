@@ -1,6 +1,7 @@
 package com.dashletter.dashletterbackend.Authentication;
 
 
+import com.dashletter.dashletterbackend.Models.UserProfileModel;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -40,9 +41,9 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 
         try {
 
-            ApplicationUser creds = new ObjectMapper()
+            UserProfileModel creds = new ObjectMapper()
 
-                    .readValue(req.getInputStream(), ApplicationUser.class);
+                    .readValue(req.getInputStream(), UserProfileModel.class);
 
             return authenticationManager.authenticate(
 
