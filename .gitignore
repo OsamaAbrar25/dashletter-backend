@@ -31,10 +31,4 @@ out/
 ### VS Code ###
 .vscode/
 
-<<<<<<< HEAD
 derby.log
-=======
-
-### MyFiles ###
-derby.log
->>>>>>> fd23f52e1bcb10bf8f7c6e3111d5287177f1f1bc
