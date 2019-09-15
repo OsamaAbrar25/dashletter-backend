@@ -19,6 +19,7 @@ public class MerchantProfileModel {
     private String phno;
     private String merchantBussiness;
 
+
     public long getId() {
         return id;
     }
