@@ -3,9 +3,10 @@ package com.dashletter.dashletterbackend.Models;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Service
-public class MerchantParagraphModel {
+public class MerchantNewsletterParagraph {
 
     @Id
     private String textStyle;
@@ -13,17 +14,29 @@ public class MerchantParagraphModel {
     private String textColor;
     private String fontFamily;
     private String textAlignment;
+    @ManyToOne
+    private MerchantNewsletterTitle merchantNewsletterTitle;
 
 
-    public MerchantParagraphModel() {
+    public MerchantNewsletterParagraph() {
     }
 
-    public MerchantParagraphModel(String style, int textSize, String textColor, String fontFamily, String alignment) {
+    public MerchantNewsletterParagraph(String style, int textSize, String textColor, String fontFamily, String alignment, long merchantNewsletterTitleId ) {
         this.textStyle = style;
         this.textSize = textSize;
         this.textColor = textColor;
         this.fontFamily = fontFamily;
         this.textAlignment = alignment;
+        this.merchantNewsletterTitle = new MerchantNewsletterTitle(merchantNewsletterTitleId,"","","","","");
+
+    }
+
+    public MerchantNewsletterTitle getMerchantNewsletterTitle() {
+        return merchantNewsletterTitle;
+    }
+
+    public void setMerchantNewsletterTitle(MerchantNewsletterTitle merchantNewsletterTitle) {
+        this.merchantNewsletterTitle = merchantNewsletterTitle;
     }
 
     public String getStyle() {

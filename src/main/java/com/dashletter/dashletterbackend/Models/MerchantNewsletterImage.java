@@ -6,28 +6,28 @@ import org.springframework.stereotype.Service;
 import javax.persistence.Id;
 
 @Service
-public class MerchantImageModel {
+public class MerchantNewsletterImage {
 
     @Id
-    private String imgLocation;
+    private String imageLocation;
     private float height;
     private float width;
 
-    public MerchantImageModel() {
+    public MerchantNewsletterImage() {
     }
 
-    public MerchantImageModel(String imgLocation, float height, float width) {
-        this.imgLocation = imgLocation;
+    public MerchantNewsletterImage(String imageLocation, float height, float width) {
+        this.imageLocation = imageLocation;
         this.height = height;
         this.width = width;
     }
 
-    public String getImgLocation() {
-        return imgLocation;
+    public String getImageLocation() {
+        return imageLocation;
     }
 
-    public void setImgLocation(String imgLocation) {
-        this.imgLocation = imgLocation;
+    public void setImageLocation(String imageLocation) {
+        this.imageLocation = imageLocation;
     }
 
     public float getHeight() {

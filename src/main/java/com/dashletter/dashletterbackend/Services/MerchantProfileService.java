@@ -1,7 +1,7 @@
 package com.dashletter.dashletterbackend.Services;
 
 
-import com.dashletter.dashletterbackend.Models.MerchantProfileModel;
+import com.dashletter.dashletterbackend.Models.MerchantProfile;
 import com.dashletter.dashletterbackend.Repositories.MerchantProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,22 +16,22 @@ public class MerchantProfileService {
     @Autowired
     private MerchantProfileRepository merchantProfileRepository;
 
-    public List<MerchantProfileModel> getAllMerchantProfile() {
-        List<MerchantProfileModel> merchantProfiles = new ArrayList<>();
+    public List<MerchantProfile> getAllMerchantProfile() {
+        List<MerchantProfile> merchantProfiles = new ArrayList<>();
         merchantProfileRepository.findAll().forEach(merchantProfiles::add);
         return merchantProfiles;
     }
 
-    public Optional<MerchantProfileModel> getMerchantProfile(long id) {
+    public Optional<MerchantProfile> getMerchantProfile(long id) {
         return merchantProfileRepository.findById(id);
     }
 
-    public void addMerchantProfile(MerchantProfileModel merchantProfileModel) {
-        merchantProfileRepository.save(merchantProfileModel);
+    public void addMerchantProfile(MerchantProfile merchantProfile) {
+        merchantProfileRepository.save(merchantProfile);
     }
 
-    public void updateMerchantProfile(long id, MerchantProfileModel merchantProfileModel) {
-        merchantProfileRepository.save(merchantProfileModel);
+    public void updateMerchantProfile(long id, MerchantProfile merchantProfile) {
+        merchantProfileRepository.save(merchantProfile);
     }
 
 

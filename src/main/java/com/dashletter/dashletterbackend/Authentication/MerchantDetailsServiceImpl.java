@@ -1,6 +1,6 @@
 package com.dashletter.dashletterbackend.Authentication;
 
-import com.dashletter.dashletterbackend.Models.MerchantProfileModel;
+import com.dashletter.dashletterbackend.Models.MerchantProfile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -17,10 +17,10 @@ public class MerchantDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        MerchantProfileModel merchantProfileModel = applicationMerchantRepository.findByUsername(username);
-        if (merchantProfileModel == null) {
+        MerchantProfile merchantProfile = applicationMerchantRepository.findByUsername(username);
+        if (merchantProfile == null) {
             throw new UsernameNotFoundException(username);
         }
-        return new User(merchantProfileModel.getUsername(), merchantProfileModel.getPassword(), emptyList());
+        return new User(merchantProfile.getUsername(), merchantProfile.getPassword(), emptyList());
     }
 }

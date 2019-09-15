@@ -1,29 +1,27 @@
 package com.dashletter.dashletterbackend.Models;
 
-
-import org.springframework.stereotype.Service;
-
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
-@Service
-public class MerchantTitleModel {
-
+@Entity
+public class UserNewsletterParagraph {
     @Id
+    private long id;
     private String fontSize;
     private String textColor;
     private String fontFamily;
-    private String textStyle;
     private String textAlignment;
+    private String textStyle;
+    @ManyToOne
+    private UserNewsletterTitle userNewsletterTitle;
 
-    public MerchantTitleModel() {
+    public long getId() {
+        return id;
     }
 
-    public MerchantTitleModel(String fontSize, String textColor, String fontFamily, String textStyle, String textAlignment) {
-        this.fontSize = fontSize;
-        this.textColor = textColor;
-        this.fontFamily = fontFamily;
-        this.textStyle = textStyle;
-        this.textAlignment = textAlignment;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getFontSize() {
@@ -50,19 +48,19 @@ public class MerchantTitleModel {
         this.fontFamily = fontFamily;
     }
 
-    public String getTextStyle() {
-        return textStyle;
-    }
-
-    public void setTextStyle(String textStyle) {
-        this.textStyle = textStyle;
-    }
-
     public String getTextAlignment() {
         return textAlignment;
     }
 
     public void setTextAlignment(String textAlignment) {
         this.textAlignment = textAlignment;
+    }
+
+    public String getTextStyle() {
+        return textStyle;
+    }
+
+    public void setTextStyle(String textStyle) {
+        this.textStyle = textStyle;
     }
 }
