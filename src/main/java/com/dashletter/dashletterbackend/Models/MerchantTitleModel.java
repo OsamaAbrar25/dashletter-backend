@@ -1,45 +1,38 @@
 package com.dashletter.dashletterbackend.Models;
 
+
 import org.springframework.stereotype.Service;
 
 import javax.persistence.Id;
 
 @Service
-public class ParagraphModel {
+public class MerchantTitleModel {
 
     @Id
-    private String style;
-    private int textSize;
+    private String fontSize;
     private String textColor;
     private String fontFamily;
+    private String style;
     private String alignment;
 
 
-    public ParagraphModel() {
+    public MerchantTitleModel() {
     }
 
-    public ParagraphModel(String style, int textSize, String textColor, String fontFamily, String alignment) {
-        this.style = style;
-        this.textSize = textSize;
+    public MerchantTitleModel(String fontSize, String textColor, String fontFamily, String style, String alignment) {
+        this.fontSize = fontSize;
         this.textColor = textColor;
         this.fontFamily = fontFamily;
+        this.style = style;
         this.alignment = alignment;
     }
 
-    public String getStyle() {
-        return style;
+    public String getFontSize() {
+        return fontSize;
     }
 
-    public void setStyle(String style) {
-        this.style = style;
-    }
-
-    public int getTextSize() {
-        return textSize;
-    }
-
-    public void setTextSize(int textSize) {
-        this.textSize = textSize;
+    public void setFontSize(String fontSize) {
+        this.fontSize = fontSize;
     }
 
     public String getTextColor() {
@@ -56,6 +49,14 @@ public class ParagraphModel {
 
     public void setFontFamily(String fontFamily) {
         this.fontFamily = fontFamily;
+    }
+
+    public String getStyle() {
+        return style;
+    }
+
+    public void setStyle(String style) {
+        this.style = style;
     }
 
     public String getAlignment() {
