@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import javax.persistence.Id;
 
 @Service
-public class TitleModel {
+public class MerchantNewsletterTitleModel {
 
     @Id
     private String fontSize;
@@ -16,10 +16,10 @@ public class TitleModel {
     private String alignment;
 
 
-    public TitleModel() {
+    public MerchantNewsletterTitleModel() {
     }
 
-    public TitleModel(String fontSize, String textColor, String fontFamily, String style, String alignment) {
+    public MerchantNewsletterTitleModel(String fontSize, String textColor, String fontFamily, String style, String alignment) {
         this.fontSize = fontSize;
         this.textColor = textColor;
         this.fontFamily = fontFamily;

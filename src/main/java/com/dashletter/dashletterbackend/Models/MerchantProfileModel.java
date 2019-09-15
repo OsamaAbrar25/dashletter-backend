@@ -18,6 +18,7 @@ public class MerchantProfileModel {
     private String email;
     private String phno;
     private String merchantBussiness;
+
     public long getId() {
         return id;
     }

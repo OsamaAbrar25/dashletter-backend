@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import javax.persistence.Id;
 
 @Service
-public class ParagraphModel {
+public class MerchantNewsletterParagraphModel {
 
     @Id
     private String style;
@@ -15,10 +15,10 @@ public class ParagraphModel {
     private String alignment;
 
 
-    public ParagraphModel() {
+    public MerchantNewsletterParagraphModel() {
     }
 
-    public ParagraphModel(String style, int textSize, String textColor, String fontFamily, String alignment) {
+    public MerchantNewsletterParagraphModel(String style, int textSize, String textColor, String fontFamily, String alignment) {
         this.style = style;
         this.textSize = textSize;
         this.textColor = textColor;

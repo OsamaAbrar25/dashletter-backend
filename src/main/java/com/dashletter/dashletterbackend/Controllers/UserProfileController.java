@@ -28,14 +28,14 @@ public class UserProfileController {
     @RequestMapping(method = RequestMethod.POST, value = "users/profile") //STORE THE DETAILS OF NEW USER.
     public void addProfile(@RequestBody UserProfileModel userProfileModel)
     {
-        profileServices.addTopic(userProfileModel);
+        profileServices.addProfile(userProfileModel);
 
     }
 
     @RequestMapping(method = RequestMethod.PUT, value = "users/profile/{id}") //MAKE CHANGE IN THE USER PROFILE.
-    public void updateProfile(@RequestBody UserProfileModel userProfileModel, @PathVariable Long id)
+    public UserProfileModel updateProfile(@RequestBody UserProfileModel userProfileModel, @PathVariable Long id)
     {
-        profileServices.updateProfile(userProfileModel, id);
+        return profileServices.updateProfile(userProfileModel, id);
     }
 
 
