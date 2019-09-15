@@ -7,17 +7,17 @@ import javax.persistence.Id;
 import java.util.Date;
 
 @Service
-public class MerchantTemplate {
+public class MerchantNewsletterTemplateModel {
 
     @Id
     private int templateId;
     private Date date;
     private Date time;
 
-    public MerchantTemplate() {
+    public MerchantNewsletterTemplateModel() {
     }
 
-    public MerchantTemplate(int templateId, Date date, Date time) {
+    public MerchantNewsletterTemplateModel(int templateId, Date date, Date time) {
         this.templateId = templateId;
         this.date = date;
         this.time = time;

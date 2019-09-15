@@ -14,9 +14,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import static com.dashletter.dashletterbackend.Authentication.SecurityConstants.*;
+import static com.dashletter.dashletterbackend.Authentication.SecurityConstants.TOKEN_PREFIX;
 
-public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
-    public JWTAuthorizationFilter(AuthenticationManager authManager) {
+public class MerchantJWTAuthorizationFilter extends BasicAuthenticationFilter {
+    public MerchantJWTAuthorizationFilter(AuthenticationManager authManager) {
         super(authManager);
     }
 

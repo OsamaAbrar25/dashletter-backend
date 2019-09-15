@@ -40,9 +40,9 @@ public class UserProfileService {
 
     }
 
-    public void deleteProfile(UserProfileModel userProfileModel, String username)
+    public void deleteProfile(String username)
     {
-        profileRepository.delete(userProfileModel);
+        profileRepository.deleteById(username);
 
     }
 }
