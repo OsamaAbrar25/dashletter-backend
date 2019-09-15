@@ -7,14 +7,14 @@ import javax.persistence.Id;
 public class MerchantProfileModel {
 
     @Id
-    String username;
-    String name;
-    String gender;
-    String dob;
-    String pass;
-    String email;
-    String phno;
-    String merchantBussiness;
+    private String username;
+    private String name;
+    private String gender;
+    private String dob;
+    private String pass;
+    private String email;
+    private String phno;
+    private String merchantBussiness;
 
 
     public MerchantProfileModel() {
