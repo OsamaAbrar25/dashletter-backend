@@ -38,9 +38,11 @@ public class UserProfileController {
         profileServices.updateProfile(userProfileModel, id);
     }
 
+
     @RequestMapping(method = RequestMethod.DELETE, value = "users/profile/{id}")//DELETE USER PROFILE FROM DATABASE.
-    public void deleteProfile(@RequestBody UserProfileModel userProfileModel, @PathVariable Long id)
+    public void deleteProfile(@PathVariable Long id)
     {
-        profileServices.deleteProfile(userProfileModel, id);
+        profileServices.deleteProfile(id);
+
     }
 }

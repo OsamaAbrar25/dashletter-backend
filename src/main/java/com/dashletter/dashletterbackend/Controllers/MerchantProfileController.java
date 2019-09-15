@@ -40,8 +40,8 @@ public class MerchantProfileController {
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "merchants/profile/{id}")//DELETE THE ENTITY OF MERCHANT WHOSE USERNAME MATCHES.
-    public void deleteMerchantProfile(@PathVariable long id,@RequestBody MerchantProfileModel merchantProfileModel)
+    public void deleteMerchantProfile(@PathVariable long id)
     {
-        merchantProfileService.deleteMerchantProfile(id, merchantProfileModel);
+        merchantProfileService.deleteMerchantProfile(id);
     }
 }

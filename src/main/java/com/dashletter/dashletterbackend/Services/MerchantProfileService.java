@@ -35,7 +35,8 @@ public class MerchantProfileService {
     }
 
 
-    public void deleteMerchantProfile(long id, MerchantProfileModel merchantProfileModel) {
-        merchantProfileRepository.delete(merchantProfileModel);
+    public void deleteMerchantProfile(long id)
+    {
+        merchantProfileRepository.deleteById(id);
     }
 }

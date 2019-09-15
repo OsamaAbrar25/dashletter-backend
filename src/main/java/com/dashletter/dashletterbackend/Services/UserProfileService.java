@@ -39,10 +39,9 @@ public class UserProfileService {
         profileRepository.save(userProfileModel);
 
     }
-
-    public void deleteProfile(UserProfileModel userProfileModel, long id)
+    public void deleteProfile(long id)
     {
-        profileRepository.delete(userProfileModel);
+        profileRepository.deleteById(id);
 
     }
 }
