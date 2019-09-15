@@ -8,30 +8,30 @@ import javax.persistence.Id;
 public class MerchantParagraphModel {
 
     @Id
-    private String style;
+    private String textStyle;
     private int textSize;
     private String textColor;
     private String fontFamily;
-    private String alignment;
+    private String textAlignment;
 
 
     public MerchantParagraphModel() {
     }
 
     public MerchantParagraphModel(String style, int textSize, String textColor, String fontFamily, String alignment) {
-        this.style = style;
+        this.textStyle = style;
         this.textSize = textSize;
         this.textColor = textColor;
         this.fontFamily = fontFamily;
-        this.alignment = alignment;
+        this.textAlignment = alignment;
     }
 
     public String getStyle() {
-        return style;
+        return textStyle;
     }
 
     public void setStyle(String style) {
-        this.style = style;
+        this.textStyle = style;
     }
 
     public int getTextSize() {
@@ -58,11 +58,11 @@ public class MerchantParagraphModel {
         this.fontFamily = fontFamily;
     }
 
-    public String getAlignment() {
-        return alignment;
+    public String getTextAlignment() {
+        return textAlignment;
     }
 
-    public void setAlignment(String alignment) {
-        this.alignment = alignment;
+    public void setTextAlignment(String textAlignment) {
+        this.textAlignment = textAlignment;
     }
 }

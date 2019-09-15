@@ -12,8 +12,8 @@ public class MerchantTitleModel {
     private String fontSize;
     private String textColor;
     private String fontFamily;
-    private String style;
-    private String alignment;
+    private String textStyle;
+    private String textAlignment;
 
 
     public MerchantTitleModel() {
@@ -23,8 +23,8 @@ public class MerchantTitleModel {
         this.fontSize = fontSize;
         this.textColor = textColor;
         this.fontFamily = fontFamily;
-        this.style = style;
-        this.alignment = alignment;
+        this.textStyle = style;
+        this.textAlignment = alignment;
     }
 
     public String getFontSize() {
@@ -51,19 +51,19 @@ public class MerchantTitleModel {
         this.fontFamily = fontFamily;
     }
 
-    public String getStyle() {
-        return style;
+    public String getTextStyle() {
+        return textStyle;
     }
 
-    public void setStyle(String style) {
-        this.style = style;
+    public void setTextStyle(String textStyle) {
+        this.textStyle = textStyle;
     }
 
     public String getAlignment() {
-        return alignment;
+        return textAlignment;
     }
 
     public void setAlignment(String alignment) {
-        this.alignment = alignment;
+        this.textAlignment = alignment;
     }
 }
