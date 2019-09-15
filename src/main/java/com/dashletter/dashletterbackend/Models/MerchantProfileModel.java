@@ -7,25 +7,25 @@ import javax.persistence.Id;
 public class MerchantProfileModel {
 
     @Id
-    String username;
-    String name;
-    String gender;
-    String dob;
-    String pass;
-    String email;
-    String phno;
-    String merchantBussiness;
+    private String username;
+    private String name;
+    private String gender;
+    private String dob;
+    private String password;
+    private String email;
+    private String phno;
+    private String merchantBussiness;
 
 
     public MerchantProfileModel() {
     }
 
-    public MerchantProfileModel(String username, String name, String gender, String dob, String pass, String email, String phno, String merchantBussiness) {
+    public MerchantProfileModel(String username, String name, String gender, String dob, String password, String email, String phno, String merchantBussiness) {
         this.username = username;
         this.name = name;
         this.gender = gender;
         this.dob = dob;
-        this.pass = pass;
+        this.password = password;
         this.email = email;
         this.phno = phno;
         this.merchantBussiness = merchantBussiness;
@@ -63,12 +63,12 @@ public class MerchantProfileModel {
         this.dob = dob;
     }
 
-    public String getPass() {
-        return pass;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getEmail() {

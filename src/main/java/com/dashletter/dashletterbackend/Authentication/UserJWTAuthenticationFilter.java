@@ -23,11 +23,11 @@ import java.util.Date;
 import static com.dashletter.dashletterbackend.Authentication.SecurityConstants.*;
 
 
-public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
+public class UserJWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
     private AuthenticationManager authenticationManager;
 
-    public JWTAuthenticationFilter(AuthenticationManager authenticationManager) {
+    public UserJWTAuthenticationFilter(AuthenticationManager authenticationManager) {
         this.authenticationManager = authenticationManager;
     }
 
