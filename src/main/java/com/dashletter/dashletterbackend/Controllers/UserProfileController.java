@@ -19,10 +19,10 @@ public class UserProfileController {
         return profileServices.getAllProfiles();
     }
 
-    @RequestMapping("users/profile/{username}") //RETURN DETAILS OF THOSE USER WHOSE USERNAME MATCHES THE STORED USERNAME.
-    public Optional<UserProfileModel> getProfile(@PathVariable String username)
+    @RequestMapping("users/profile/{id}") //RETURN DETAILS OF THOSE USER WHOSE USERNAME MATCHES THE STORED USERNAME.
+    public Optional<UserProfileModel> getProfile(@PathVariable long id)
     {
-        return profileServices.getProfile(username);
+        return profileServices.getProfile(id);
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "users/profile") //STORE THE DETAILS OF NEW USER.
@@ -32,15 +32,15 @@ public class UserProfileController {
 
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "users/profile/{username}") //MAKE CHANGE IN THE USER PROFILE.
-    public void updateProfile(@RequestBody UserProfileModel userProfileModel, @PathVariable String username)
+    @RequestMapping(method = RequestMethod.PUT, value = "users/profile/{id}") //MAKE CHANGE IN THE USER PROFILE.
+    public void updateProfile(@RequestBody UserProfileModel userProfileModel, @PathVariable Long id)
     {
-        profileServices.updateProfile(userProfileModel,username);
+        profileServices.updateProfile(userProfileModel, id);
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "users/profile/{username}")//DELETE USER PROFILE FROM DATABASE.
-    public void deleteProfile(@RequestBody UserProfileModel userProfileModel, @PathVariable String username)
+    @RequestMapping(method = RequestMethod.DELETE, value = "users/profile/{id}")//DELETE USER PROFILE FROM DATABASE.
+    public void deleteProfile(@RequestBody UserProfileModel userProfileModel, @PathVariable Long id)
     {
-        profileServices.deleteProfile(userProfileModel,username);
+        profileServices.deleteProfile(userProfileModel, id);
     }
 }

@@ -24,9 +24,9 @@ public class UserProfileService {
         return userProfileModels;
     }
 
-    public Optional<UserProfileModel> getProfile(String username)
+    public Optional<UserProfileModel> getProfile(long id)
     {
-        return profileRepository.findById(username);
+        return profileRepository.findById(id);
     }
 
     public void addTopic(UserProfileModel userProfileModel)
@@ -34,13 +34,13 @@ public class UserProfileService {
         profileRepository.save(userProfileModel);
     }
 
-    public void updateProfile(UserProfileModel userProfileModel, String username)
+    public void updateProfile(UserProfileModel userProfileModel, long id)
     {
         profileRepository.save(userProfileModel);
 
     }
 
-    public void deleteProfile(UserProfileModel userProfileModel, String username)
+    public void deleteProfile(UserProfileModel userProfileModel, long id)
     {
         profileRepository.delete(userProfileModel);
 

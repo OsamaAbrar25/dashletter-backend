@@ -22,22 +22,20 @@ public class MerchantProfileService {
         return merchantProfiles;
     }
 
-    public Optional<MerchantProfileModel> getMerchantProfile(String username) {
-        return merchantProfileRepository.findById(username);
+    public Optional<MerchantProfileModel> getMerchantProfile(long id) {
+        return merchantProfileRepository.findById(id);
     }
 
     public void addMerchantProfile(MerchantProfileModel merchantProfileModel) {
         merchantProfileRepository.save(merchantProfileModel);
-        return;
     }
 
-    public void updateMerchantProfile(String username, MerchantProfileModel merchantProfileModel) {
+    public void updateMerchantProfile(long id, MerchantProfileModel merchantProfileModel) {
         merchantProfileRepository.save(merchantProfileModel);
-        return;
     }
 
 
-    public void deleteMerchantProfile(String username, MerchantProfileModel merchantProfileModel) {
+    public void deleteMerchantProfile(long id, MerchantProfileModel merchantProfileModel) {
         merchantProfileRepository.delete(merchantProfileModel);
     }
 }
