@@ -1,32 +1,24 @@
 package com.dashletter.dashletterbackend.Models;
 
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class UserProfileModel {
 
     @Id
-    String username;
-    String name;
-    String gender;
-    String dob;
-    String pass;
-    String email;
-    String phno;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column(unique = true)
+    private String username;
+    private String password;
+    private String name;
+    private String gender;
+    private String dob;
+    private String email;
+    private String phno;
 
-    public UserProfileModel() {
-    }
-
-    public UserProfileModel(String username, String name, String gender, String dob, String pass, String email, String phno) {
-        this.username = username;
-        this.name = name;
-        this.gender = gender;
-        this.dob = dob;
-        this.pass = pass;
-        this.email = email;
-        this.phno = phno;
+    public long getId() {
+        return id;
     }
 
     public String getUsername() {
@@ -35,6 +27,14 @@ public class UserProfileModel {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getName() {
@@ -59,14 +59,6 @@ public class UserProfileModel {
 
     public void setDob(String dob) {
         this.dob = dob;
-    }
-
-    public String getPass() {
-        return pass;
-    }
-
-    public void setPass(String pass) {
-        this.pass = pass;
     }
 
     public String getEmail() {

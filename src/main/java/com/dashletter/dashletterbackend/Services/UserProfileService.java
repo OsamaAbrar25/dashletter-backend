@@ -1,8 +1,8 @@
 package com.dashletter.dashletterbackend.Services;
 
 
-import com.dashletter.dashletterbackend.Repositories.UserProfileRepository;
 import com.dashletter.dashletterbackend.Models.UserProfileModel;
+import com.dashletter.dashletterbackend.Repositories.UserProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
