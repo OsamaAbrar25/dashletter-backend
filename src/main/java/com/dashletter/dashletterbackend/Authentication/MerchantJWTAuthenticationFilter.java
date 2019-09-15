@@ -1,6 +1,6 @@
 package com.dashletter.dashletterbackend.Authentication;
 
-import com.dashletter.dashletterbackend.Models.MerchantProfileModel;
+import com.dashletter.dashletterbackend.Models.MerchantProfile;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -33,7 +33,7 @@ public class MerchantJWTAuthenticationFilter extends UsernamePasswordAuthenticat
     public Authentication attemptAuthentication(HttpServletRequest req, HttpServletResponse res) throws AuthenticationException {
 
         try {
-            MerchantProfileModel creds = new ObjectMapper().readValue(req.getInputStream(), MerchantProfileModel.class);
+            MerchantProfile creds = new ObjectMapper().readValue(req.getInputStream(), MerchantProfile.class);
             return authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(creds.getUsername(), creds.getPassword(),
                     new ArrayList<>()));
         } catch (IOException e) {

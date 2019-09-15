@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class UserNewsletterModel {
+public class UserNewsletter {
     @Id
     private long id;
     private String date;

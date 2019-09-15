@@ -1,7 +1,7 @@
 package com.dashletter.dashletterbackend.Services;
 
 
-import com.dashletter.dashletterbackend.Models.UserProfileModel;
+import com.dashletter.dashletterbackend.Models.UserProfile;
 import com.dashletter.dashletterbackend.Repositories.UserProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,28 +16,28 @@ public class UserProfileService {
     @Autowired
     private UserProfileRepository profileRepository;
 
-    public List<UserProfileModel> getAllProfiles()
+    public List<UserProfile> getAllProfiles()
     {
-        List<UserProfileModel> userProfileModels = new ArrayList<>();
+        List<UserProfile> userProfiles = new ArrayList<>();
         profileRepository.findAll()
-                .forEach(userProfileModels::add);
-        return userProfileModels;
+                .forEach(userProfiles::add);
+        return userProfiles;
     }
 
-    public Optional<UserProfileModel> getProfile(long id)
+    public Optional<UserProfile> getProfile(long id)
     {
         return profileRepository.findById(id);
     }
 
-    public void addProfile(UserProfileModel userProfileModel)
+    public void addProfile(UserProfile userProfile)
     {
-        profileRepository.save(userProfileModel);
+        profileRepository.save(userProfile);
     }
 
-    public UserProfileModel updateProfile(UserProfileModel userProfileModel, long id)
+    public UserProfile updateProfile(UserProfile userProfile, long id)
     {
-        profileRepository.save(userProfileModel);
-        return profileRepository.save(userProfileModel);
+        profileRepository.save(userProfile);
+        return profileRepository.save(userProfile);
     }
     public void deleteProfile(long id)
     {

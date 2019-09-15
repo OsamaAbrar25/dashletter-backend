@@ -1,7 +1,7 @@
 package com.dashletter.dashletterbackend.Authentication;
 
 
-import com.dashletter.dashletterbackend.Models.UserProfileModel;
+import com.dashletter.dashletterbackend.Models.UserProfile;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -35,7 +35,7 @@ public class UserJWTAuthenticationFilter extends UsernamePasswordAuthenticationF
     public Authentication attemptAuthentication(HttpServletRequest req, HttpServletResponse res) throws AuthenticationException {
 
         try {
-            UserProfileModel creds = new ObjectMapper().readValue(req.getInputStream(), UserProfileModel.class);
+            UserProfile creds = new ObjectMapper().readValue(req.getInputStream(), UserProfile.class);
             return authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(creds.getUsername(), creds.getPassword(),
                         new ArrayList<>()));
         } catch (IOException e) {

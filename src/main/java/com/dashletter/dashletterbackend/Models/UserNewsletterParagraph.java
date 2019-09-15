@@ -2,9 +2,10 @@ package com.dashletter.dashletterbackend.Models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
-public class UserNewsletterTitleModel {
+public class UserNewsletterParagraph {
     @Id
     private long id;
     private String fontSize;
@@ -12,6 +13,8 @@ public class UserNewsletterTitleModel {
     private String fontFamily;
     private String textAlignment;
     private String textStyle;
+    @ManyToOne
+    private UserNewsletterTitle userNewsletterTitle;
 
     public long getId() {
         return id;

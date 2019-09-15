@@ -1,7 +1,6 @@
 package com.dashletter.dashletterbackend.Authentication;
 
-import com.dashletter.dashletterbackend.Models.MerchantProfileModel;
-import com.dashletter.dashletterbackend.Models.UserProfileModel;
+import com.dashletter.dashletterbackend.Models.MerchantProfile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +17,7 @@ public class MerchantController {
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @PostMapping("/sign-up")
-    public void signUp(@RequestBody MerchantProfileModel user) {
+    public void signUp(@RequestBody MerchantProfile user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         applicationMerchantRepository.save(user);
     }

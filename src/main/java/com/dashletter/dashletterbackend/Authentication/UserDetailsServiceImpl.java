@@ -1,6 +1,6 @@
 package com.dashletter.dashletterbackend.Authentication;
 
-import com.dashletter.dashletterbackend.Models.UserProfileModel;
+import com.dashletter.dashletterbackend.Models.UserProfile;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -19,10 +19,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UserProfileModel userProfileModel = applicationUserRepository.findByUsername(username);
-        if (userProfileModel == null) {
+        UserProfile userProfile = applicationUserRepository.findByUsername(username);
+        if (userProfile == null) {
             throw new UsernameNotFoundException(username);
         }
-        return new User(userProfileModel.getUsername(), userProfileModel.getPassword(), emptyList());
+        return new User(userProfile.getUsername(), userProfile.getPassword(), emptyList());
     }
 }

@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class UserNewsletterImageModel {
+public class UserNewsletterImage {
     @Id
     private long id;
     private String height;
