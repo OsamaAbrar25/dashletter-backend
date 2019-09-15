@@ -14,31 +14,31 @@ public class UserProfileController {
     @Autowired
     private UserProfileService profileServices;
 
-    @RequestMapping("/userProfile")  //RETURN ALL THE DETAILS OF USER PROFILE.
+    @RequestMapping("users/profile")  //RETURN ALL THE DETAILS OF USER PROFILE.
     public List<UserProfileModel> getProfiles(){
         return profileServices.getAllProfiles();
     }
 
-    @RequestMapping("/userProfile/{username}") //RETURN DETAILS OF THOSE USER WHOSE USERNAME MATCHES THE STORED USERNAME.
+    @RequestMapping("users/profile/{username}") //RETURN DETAILS OF THOSE USER WHOSE USERNAME MATCHES THE STORED USERNAME.
     public Optional<UserProfileModel> getProfile(@PathVariable String username)
     {
         return profileServices.getProfile(username);
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/userProfile") //STORE THE DETAILS OF NEW USER.
+    @RequestMapping(method = RequestMethod.POST, value = "users/profile") //STORE THE DETAILS OF NEW USER.
     public void addProfile(@RequestBody UserProfileModel userProfileModel)
     {
         profileServices.addTopic(userProfileModel);
 
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/userProfile/{username}") //MAKE CHANGE IN THE USER PROFILE.
+    @RequestMapping(method = RequestMethod.PUT, value = "users/profile/{username}") //MAKE CHANGE IN THE USER PROFILE.
     public void updateProfile(@RequestBody UserProfileModel userProfileModel, @PathVariable String username)
     {
         profileServices.updateProfile(userProfileModel,username);
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/userProfile/{username}")//DELETE USER PROFILE FROM DATABASE.
+    @RequestMapping(method = RequestMethod.DELETE, value = "users/profile/{username}")//DELETE USER PROFILE FROM DATABASE.
     public void deleteProfile(@RequestBody UserProfileModel userProfileModel, @PathVariable String username)
     {
         profileServices.deleteProfile(userProfileModel,username);

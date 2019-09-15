@@ -1,12 +1,14 @@
 package com.dashletter.dashletterbackend.Models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class MerchantProfileModel {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column(unique = true)
     private String username;
     private String name;
     private String gender;
@@ -16,6 +18,9 @@ public class MerchantProfileModel {
     private String phno;
     private String merchantBussiness;
 
+    public long getId() {
+        return id;
+    }
 
     public MerchantProfileModel() {
     }
