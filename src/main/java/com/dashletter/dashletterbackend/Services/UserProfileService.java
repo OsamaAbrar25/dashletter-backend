@@ -29,14 +29,14 @@ public class UserProfileService {
         return profileRepository.findById(id);
     }
 
-    public void addTopic(UserProfileModel userProfileModel)
+    public void addProfile(UserProfileModel userProfileModel)
     {
         profileRepository.save(userProfileModel);
     }
 
-    public void updateProfile(UserProfileModel userProfileModel, long id)
+    public UserProfileModel updateProfile(UserProfileModel userProfileModel, long id)
     {
-        profileRepository.save(userProfileModel);
+        return profileRepository.save(userProfileModel);
 
     }
     public void deleteProfile(long id)
