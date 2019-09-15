@@ -15,16 +15,15 @@ public class MerchantTitleModel {
     private String textStyle;
     private String textAlignment;
 
-
     public MerchantTitleModel() {
     }
 
-    public MerchantTitleModel(String fontSize, String textColor, String fontFamily, String style, String alignment) {
+    public MerchantTitleModel(String fontSize, String textColor, String fontFamily, String textStyle, String textAlignment) {
         this.fontSize = fontSize;
         this.textColor = textColor;
         this.fontFamily = fontFamily;
-        this.textStyle = style;
-        this.textAlignment = alignment;
+        this.textStyle = textStyle;
+        this.textAlignment = textAlignment;
     }
 
     public String getFontSize() {
@@ -59,11 +58,11 @@ public class MerchantTitleModel {
         this.textStyle = textStyle;
     }
 
-    public String getAlignment() {
+    public String getTextAlignment() {
         return textAlignment;
     }
 
-    public void setAlignment(String alignment) {
-        this.textAlignment = alignment;
+    public void setTextAlignment(String textAlignment) {
+        this.textAlignment = textAlignment;
     }
 }
