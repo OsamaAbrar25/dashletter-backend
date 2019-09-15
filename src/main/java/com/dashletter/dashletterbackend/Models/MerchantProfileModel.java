@@ -6,31 +6,23 @@ import javax.persistence.*;
 public class MerchantProfileModel {
 
     @Id
-<<<<<<< HEAD
-=======
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(unique = true)
->>>>>>> fd23f52e1bcb10bf8f7c6e3111d5287177f1f1bc
     private String username;
     private String name;
     private String gender;
     private String dob;
-<<<<<<< HEAD
     private String pass;
-=======
     private String password;
->>>>>>> fd23f52e1bcb10bf8f7c6e3111d5287177f1f1bc
     private String email;
     private String phno;
     private String merchantBussiness;
 
-<<<<<<< HEAD
-=======
+
     public long getId() {
         return id;
     }
->>>>>>> fd23f52e1bcb10bf8f7c6e3111d5287177f1f1bc
 
     public MerchantProfileModel() {
     }
