@@ -21,11 +21,10 @@ public class MerchantProfileController {
         return merchantProfileService.getAllMerchantProfile();
     }
 
-
-    @RequestMapping("merchants/profile/{username}") //RETURN ENTITY OF THE MERCHANT WHOSE DATA IS STORED IN DATABASE.
-    public Optional<MerchantProfileModel> getProfile(@PathVariable String username)
+    @RequestMapping("merchants/profile/{id}") //RETURN ENTITY OF THE MERCHANT WHOSE DATA IS STORED IN DATABASE.
+    public Optional<MerchantProfileModel> getProfile(@PathVariable long id)
     {
-        return merchantProfileService.getMerchantProfile(username);
+        return merchantProfileService.getMerchantProfile(id);
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "merchants/profile") //ADD NEW MERCHANT TO THE DATABASE.
@@ -34,15 +33,15 @@ public class MerchantProfileController {
         merchantProfileService.addMerchantProfile(merchantProfileModel);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "merchants/profile/{username}")//UPDATE THE STORED MERCHANT DATA.
-    public void updateMerchantProfile(@PathVariable String username,@RequestBody MerchantProfileModel merchantProfileModel)
+    @RequestMapping(method = RequestMethod.PUT, value = "merchants/profile/{id}")//UPDATE THE STORED MERCHANT DATA.
+    public void updateMerchantProfile(@PathVariable long id,@RequestBody MerchantProfileModel merchantProfileModel)
     {
-        merchantProfileService.updateMerchantProfile(username,merchantProfileModel);
+        merchantProfileService.updateMerchantProfile(id, merchantProfileModel);
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "merchants/profile/{username}")//DELETE THE ENTITY OF MERCHANT WHOSE USERNAME MATCHES.
-    public void deleteMerchantProfile(@PathVariable String username,@RequestBody MerchantProfileModel merchantProfileModel)
+    @RequestMapping(method = RequestMethod.DELETE, value = "merchants/profile/{id}")//DELETE THE ENTITY OF MERCHANT WHOSE USERNAME MATCHES.
+    public void deleteMerchantProfile(@PathVariable long id)
     {
-        merchantProfileService.deleteMerchantProfile(username,merchantProfileModel);
+        merchantProfileService.deleteMerchantProfile(id);
     }
 }

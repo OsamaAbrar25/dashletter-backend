@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Sat Sep 14 23:02:21 IST 2019:
 Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-016d-30d5-3167-000002c38348 
 =======
@@ -21,6 +22,10 @@ Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 
 Sun Sep 15 15:51:18 IST 2019:
 Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-016d-3470-ec37-000003f94a00 
 >>>>>>> fd23f52e1bcb10bf8f7c6e3111d5287177f1f1bc
+=======
+Sun Sep 15 17:00:52 IST 2019:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-016d-34b0-9bdd-000003f71600 
+>>>>>>> 90fe747ab96519f5bbe1d20e888e7dc2d074ddce
 on database directory memory:C:\Users\Osama\Desktop\dashletter-backend\testdb with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@77556fd 
 Loaded from file:/C:/Users/Osama/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.14.2.0/7efad40ef52fbb1f08142f07a83b42d29e47d8ce/derby-10.14.2.0.jar
 java.vendor=Oracle Corporation
