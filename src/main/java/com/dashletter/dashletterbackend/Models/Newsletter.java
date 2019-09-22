@@ -1,19 +1,32 @@
 package com.dashletter.dashletterbackend.Models;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Newsletter {
 
-    String title;
-    String imgUrl;
+    @Id
+    private  Long id;
+    private String title;
+    private String imgUrl;
+
 
     public Newsletter() {
     }
 
-    public Newsletter(String title, String imgUrl) {
+    public Newsletter(Long id, String title, String imgUrl) {
+        this.id = id;
         this.title = title;
         this.imgUrl = imgUrl;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitle() {

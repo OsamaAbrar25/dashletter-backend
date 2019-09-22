@@ -14,12 +14,12 @@ public class NewsletterController {
     @Autowired
     private NewsletterServices newsletterServices;
 
-    @RequestMapping("/user/newsletters")
+    @RequestMapping("/newsletters") //TO GET NEWSLETTER FROM THE DATABASE.
     public List<Newsletter> getAllNewsletters(){
         return newsletterServices.getAllNewsletters();
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/user/newsletter")
+    @RequestMapping(method = RequestMethod.POST, value = "/newsletter") //TO STORE NEWSLETTER IN THE DATABASE.
     public void addNewsletters(@RequestBody Newsletter newsletter){
         newsletterServices.addNewsletters(newsletter);
     }
