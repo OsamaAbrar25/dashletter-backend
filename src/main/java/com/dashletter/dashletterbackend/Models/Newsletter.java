@@ -7,7 +7,7 @@ import javax.persistence.Id;
 public class Newsletter {
 
     @Id
-    private  Long id;
+    private long id;
     private String title;
     private String imgUrl;
 
@@ -15,17 +15,17 @@ public class Newsletter {
     public Newsletter() {
     }
 
-    public Newsletter(Long id, String title, String imgUrl) {
+    public Newsletter(long id, String title, String imgUrl) {
         this.id = id;
         this.title = title;
         this.imgUrl = imgUrl;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
