@@ -19,7 +19,7 @@ public class NewsletterController {
         return newsletterService.getAllNewsletters();
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/newsletter") //TO STORE NEWSLETTER IN THE DATABASE.
+    @RequestMapping(method = RequestMethod.POST, value = "/newsletters") //TO STORE NEWSLETTER IN THE DATABASE.
     public void addNewsletters(@RequestBody Newsletter newsletter){
         newsletterService.addNewsletters(newsletter);
     }
