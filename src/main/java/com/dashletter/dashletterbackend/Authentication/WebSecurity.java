@@ -31,7 +31,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.POST, USER_SIGN_UP_URL).permitAll()
                 .antMatchers(HttpMethod.POST, MERCHANT_SIGN_UP_URL).permitAll()
                 .anyRequest().authenticated()
-                .and()
+                .and().cors().and()
                 .addFilter(new UserJWTAuthenticationFilter(authenticationManager()))
                 .addFilter(new UserJWTAuthorizationFilter(authenticationManager()))
                 .addFilter(new MerchantJWTAuthenticationFilter(authenticationManager()))
