@@ -56,6 +56,7 @@ public class UserJWTAuthenticationFilter extends UsernamePasswordAuthenticationF
         cookie.setMaxAge(COOKIE_EXPIRY);
         cookie.setSecure(true);
         cookie.setHttpOnly(true);
+        cookie.setPath("/");
         res.addCookie(cookie);
     }
 }

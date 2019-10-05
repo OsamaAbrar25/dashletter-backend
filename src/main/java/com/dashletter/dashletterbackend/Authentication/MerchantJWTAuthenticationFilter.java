@@ -54,6 +54,7 @@ public class MerchantJWTAuthenticationFilter extends UsernamePasswordAuthenticat
         cookie.setMaxAge(COOKIE_EXPIRY);
         cookie.setSecure(true);
         cookie.setHttpOnly(true);
+        cookie.setPath("/");
         res.addCookie(cookie);
     }
 }
