@@ -51,7 +51,7 @@ public class UserJWTAuthenticationFilter extends UsernamePasswordAuthenticationF
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
                 .signWith(SignatureAlgorithm.HS512, SECRET)
                 .compact();
-        res.addHeader(HEADER_STRING, TOKEN_PREFIX + token);
+        //res.addHeader(HEADER_STRING, TOKEN_PREFIX + token);
         Cookie cookie = new Cookie(HEADER_STRING, TOKEN_PREFIX + token);
         cookie.setMaxAge(COOKIE_EXPIRY);
         cookie.setSecure(true);

@@ -8,10 +8,12 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import static com.dashletter.dashletterbackend.Authentication.SecurityConstants.*;
 import static com.dashletter.dashletterbackend.Authentication.SecurityConstants.TOKEN_PREFIX;
@@ -24,7 +26,12 @@ public class MerchantJWTAuthorizationFilter extends BasicAuthenticationFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res, FilterChain chain) throws IOException, ServletException {
 
-        String header = req.getHeader(HEADER_STRING);
+        //String header = req.getHeader(HEADER_STRING);
+        String header = Arrays.stream(req.getCookies())
+                .filter(c -> HEADER_STRING.equals(c.getName()))
+                .map(Cookie::getValue)
+                .findAny()
+                .toString();
         if (header == null || !header.startsWith(TOKEN_PREFIX)) {
             chain.doFilter(req, res);
             return;
