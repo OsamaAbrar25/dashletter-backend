@@ -41,7 +41,12 @@ public class UserJWTAuthorizationFilter extends BasicAuthenticationFilter {
     }
 
     private UsernamePasswordAuthenticationToken getAuthentication(HttpServletRequest request) {
-        String token = request.getHeader(HEADER_STRING);
+        //String token = request.getHeader(HEADER_STRING);
+        String token = Arrays.stream(request.getCookies())
+                .filter(c -> HEADER_STRING.equals(c.getName()))
+                .map(Cookie::getValue)
+                .findAny()
+                .toString();
         if (token != null) {
             // parse the token.
             String user = Jwts.parser()
