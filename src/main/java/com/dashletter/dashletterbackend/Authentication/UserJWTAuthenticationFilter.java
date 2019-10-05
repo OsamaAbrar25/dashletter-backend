@@ -14,6 +14,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -51,5 +52,10 @@ public class UserJWTAuthenticationFilter extends UsernamePasswordAuthenticationF
                 .signWith(SignatureAlgorithm.HS512, SECRET)
                 .compact();
         res.addHeader(HEADER_STRING, TOKEN_PREFIX + token);
+        Cookie cookie = new Cookie(HEADER_STRING, TOKEN_PREFIX + token);
+        cookie.setMaxAge(COOKIE_EXPIRY);
+        cookie.setSecure(true);
+        cookie.setHttpOnly(true);
+        res.addCookie(cookie);
     }
 }
