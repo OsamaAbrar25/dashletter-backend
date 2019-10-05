@@ -5,6 +5,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
+import org.springframework.web.util.WebUtils;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -27,11 +28,8 @@ public class MerchantJWTAuthorizationFilter extends BasicAuthenticationFilter {
     protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res, FilterChain chain) throws IOException, ServletException {
 
         //String header = req.getHeader(HEADER_STRING);
-        String header = Arrays.stream(req.getCookies())
-                .filter(c -> HEADER_STRING.equals(c.getName()))
-                .map(Cookie::getValue)
-                .findAny()
-                .toString();
+        Cookie cookie = WebUtils.getCookie(req, HEADER_STRING);
+        String header = cookie.getValue();
         if (header == null || !header.startsWith(TOKEN_PREFIX)) {
             chain.doFilter(req, res);
             return;
@@ -43,11 +41,8 @@ public class MerchantJWTAuthorizationFilter extends BasicAuthenticationFilter {
 
     private UsernamePasswordAuthenticationToken getAuthentication(HttpServletRequest request) {
         //String token = request.getHeader(HEADER_STRING);
-        String token = Arrays.stream(request.getCookies())
-                .filter(c -> HEADER_STRING.equals(c.getName()))
-                .map(Cookie::getValue)
-                .findAny()
-                .toString();
+        Cookie cookie = WebUtils.getCookie(request, HEADER_STRING);
+        String token = cookie.getValue();
         if (token != null) {
             // parse the token.
             String user = Jwts.parser()
