@@ -16,9 +16,15 @@ public class UserProfile {
     private String dob;
     private String email;
     private String phno;
+    private boolean active;
+    private String roles;
 
     public long getId() {
         return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -75,5 +81,21 @@ public class UserProfile {
 
     public void setPhno(String phno) {
         this.phno = phno;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public String getRoles() {
+        return roles;
+    }
+
+    public void setRoles(String roles) {
+        this.roles = "USER";
     }
 }
